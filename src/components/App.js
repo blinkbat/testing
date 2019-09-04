@@ -9,8 +9,8 @@ export default () => {
 
     return (
         <div>
-            <CommentList />
             <CommentBox />
+            <CommentList />
         </div>
     );
 
