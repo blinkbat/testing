@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 // replacing reduxPromise with our custom middleware
 //import reduxPromise from 'redux-promise';
 import async from 'middlewares/async';
+import stateValidator from 'middlewares/stateValidator';
 
 import reducers from 'reducers';
 
@@ -19,7 +20,10 @@ export default ({ children, initialState = {} }) => {
         reducers, 
         initialState, 
         // apply our custom middleware
-        applyMiddleware( async )
+        applyMiddleware( 
+            async,
+            stateValidator
+        )
     );
 
     return(

@@ -16,7 +16,7 @@ export default ({ dispatch }) => next => action => {
 
     // wait for Promise to resolve, create a new action 
     // with its data, and then dispatch it.
-    action.payload.then( function() {
+    action.payload.then( function( response ) {
 
         // spread action to newAction, and then
         // add on a new response payload.
